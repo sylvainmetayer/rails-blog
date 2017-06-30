@@ -20,6 +20,11 @@
       <%= f.text_area :content %>
       <%= post.errors[:content] %>
     </p>
+    <p>
+      Image
+      <%= f.file_field :image %>
+      <%= post.errors[:image] %>
+    </p>
 
     <%= f.submit %>
 <% end %>

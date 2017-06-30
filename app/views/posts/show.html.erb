@@ -1,6 +1,5 @@
 <div>
+  <%= link_to 'Edit this post', [:edit, @post], :class => 'btn btn-info' %>
+  <%= link_to 'Delete this post', [@post], method: :delete, :class => 'btn btn-danger' %>
   <%= render partial: 'single_post', locals: {post: @post} %>
 </div>
-
-<%= link_to 'Edit this post', [:edit, @post] %>
-<%= link_to 'Delete this post', [@post], method: :delete %>

@@ -1,7 +1,14 @@
-<h1><%= post.title %></h1>
+<h1><%= post.title %> <%= 'by ' + post.user.name if post.user != nil %></h1>
 
-<%= post.publish_date %>
+<h2>Published : <%= post.publish_date %></h2>
 
+<%= image_tag(@post.image) %>
+<h2>Resume</h2>
+<p>
+  <%= post.resume %>
+</p>
+
+<h2>Content</h2>
 <p>
   <%= post.content %>
 </p>
