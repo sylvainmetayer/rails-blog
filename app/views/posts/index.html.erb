@@ -1,11 +1,13 @@
 <ul>
   <% @posts.each do |post| %>
       <li>
-        <%= post.title %> - <%= post.publish_date %>
-        <% if post.user != nil %>
-            (<%= post.user.name %>)
-        <% else %>
-            (Unknown author)
+        <%= link_to [post] do %>
+            <%= post.title %> - <%= post.publish_date %>
+            <% if post.user != nil %>
+                (<%= post.user.name %>)
+            <% else %>
+                (Unknown author)
+            <% end %>
         <% end %>
       </li>
   <% end %>
