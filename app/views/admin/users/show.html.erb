@@ -2,4 +2,12 @@
   <%= render partial: "identity", locals: {user: @user} %>
 </div>
 
-<%= link_to "EDIT", [:edit, :admin, @user] %>
+<ul>
+  <li><%= @user.firstname %> <%= @user.name %></li>
+  <li><%= @user.email %></li>
+  <li>Inscris depuis le : <%= @user.created_at %></li>
+  <li>Derniere maj le : <%= @user.updated_at %></li>
+
+</ul>
+
+<button type="button" class="btn btn-info"><%= link_to "EDIT", [:edit, :admin, @user] %></button>

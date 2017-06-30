@@ -4,8 +4,8 @@
         <%= link_to [:admin, user] do %>
             <%= render partial: "identity", locals: {user: user} %>
         <% end %>
-        |||||||||||||
-        <%= link_to "DELETE", [:admin, user], method: :delete %>
+        <%= link_to "DELETE", [:admin, user], method: :delete, :class => 'btn btn-danger' %>
+
       </li>
   <% end %>
   <br/>
