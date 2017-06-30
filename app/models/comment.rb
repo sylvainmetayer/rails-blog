@@ -2,6 +2,8 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
 
+  validates :content, presence: true
+
   # @param [User] user
   def can_be_updated_or_deleted_by(user)
     if self.user == nil

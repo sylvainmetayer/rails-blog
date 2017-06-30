@@ -27,8 +27,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to [@comment.post]
     else
-      puts 'ERROR'
-      render @comment.post
+      flash[:warning] = 'You cannot post an empty comment !'
+      redirect_to url_for(:controller => :posts, :action => :show, :id => @comment.post.id)
     end
   end
 

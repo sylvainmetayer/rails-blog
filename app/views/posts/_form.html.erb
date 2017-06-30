@@ -1,27 +1,22 @@
-<%= form_for post, url: [post] do |f| %>
+<%= bootstrap_form_for post, url: [post] do |f| %>
 
     <p>
-      Title
       <%= f.text_field :title %>
       <%= post.errors[:title] %>
     </p>
     <p>
-      Publication date
       <%= f.date_select :publish_date %>
       <%= post.errors[:publish_date] %>
     </p>
     <p>
-      Resume
       <%= f.text_field :resume %>
       <%= post.errors[:resume] %>
     </p>
     <p>
-      Content
       <%= f.text_area :content %>
       <%= post.errors[:content] %>
     </p>
     <p>
-      Image
       <%= f.file_field :image %>
       <%= post.errors[:image] %>
     </p>

@@ -1,7 +1,3 @@
-<div>
-  <%= render partial: "identity", locals: {user: @user} %>
-</div>
-
 <ul>
   <li><%= @user.firstname %> <%= @user.name %></li>
   <li><%= @user.email %></li>
@@ -10,4 +6,6 @@
 
 </ul>
 
-<button type="button" class="btn btn-info"><%= link_to "EDIT", [:edit, :admin, @user] %></button>
+<%= link_to 'Edit this user', [:edit, :admin, @user], :class => 'btn btn-info' %>
+<%= link_to 'Delete this user', [:admin, @user], method: :delete, :class => 'btn btn-danger' %>
+
