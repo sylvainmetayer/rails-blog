@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def get_post_params
-    return :title, :publish_date, :resume, :content, :user
+    return :title, :publish_date, :resume, :content, :user, :image
   end
 
   def update
@@ -45,7 +45,6 @@ class PostsController < ApplicationController
     end
 
     @post.update_attributes params[:post].permit(get_post_params)
-    @post.user = current_user
     if @post.save
       redirect_to [@post]
     else
@@ -56,6 +55,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @post.update_attributes params[:post].permit(get_post_params)
+    @post.user = current_user
     if @post.save
       redirect_to [@post]
     else

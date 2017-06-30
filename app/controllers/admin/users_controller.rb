@@ -25,7 +25,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def get_user_params
-    return :firstname, :name, :email, :password
+    return :firstname, :name, :email, :password, :avatar
   end
 
   def update
