@@ -5,7 +5,7 @@
   <% end %>
   <%= render partial: 'single_post', locals: {post: @post} %>
 
-  <h2>Comments </h2>
+  <h2>Comments (<%= @comments.size %>) </h2>
   <%= render partial: 'comments/list', locals: {comments: @comments} %>
 
   <% if user_signed_in? %>
