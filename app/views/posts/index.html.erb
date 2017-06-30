@@ -4,10 +4,11 @@
         <%= link_to [post] do %>
             <%= post.title %> - <%= post.publish_date %>
             <% if post.user != nil %>
-                (<%= post.user.name %>)
+                (<%= '(' + post.user.email + ')' if post.user != nil %>)
             <% else %>
                 (Unknown author)
             <% end %>
+            <%= image_tag(post.image.thumb) unless post.image.nil? %>
         <% end %>
       </li>
   <% end %>
