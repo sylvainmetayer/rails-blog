@@ -4,4 +4,11 @@
       <%= link_to 'Delete this post', [@post], method: :delete, :class => 'btn btn-danger' %>
   <% end %>
   <%= render partial: 'single_post', locals: {post: @post} %>
+
+  <h2>Comments </h2>
+  <%= render partial: 'comments/list', locals: {comments: @comments} %>
+
+  <% if user_signed_in? %>
+      <%= render partial: 'comments/form', locals: {comment: @comment, post: @post} %>
+  <% end %>
 </div>

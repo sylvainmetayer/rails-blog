@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   def show
     id = params[:id]
     @post = Post.find(id)
+    @comments = Comment.where(:post_id => @post)
+    @comment = Comment.new
   end
 
   def new

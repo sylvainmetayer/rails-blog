@@ -1,0 +1,8 @@
+<ul>
+  <% comments.each do |comment| %>
+      <li>
+        <%= link_to 'Delete', [comment], method: :delete, :class => 'btn btn-danger' if user_signed_in? and comment.can_be_updated_or_deleted_by(current_user) %>
+        <%= comment.user.name + ' ' + comment.user.firstname %> , <%= comment.date %> : <%= comment.content %>
+      </li>
+  <% end %>
+</ul>
