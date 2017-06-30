@@ -8,7 +8,7 @@
               (Unknown author)
           <% end %>
           <%= image_tag(post.image.thumb) unless post.image.nil? %>
-           - <%= post.resume %> <%= link_to [post] do %> ... Voir la suite <% end %>
+           - <%= post.resume %> ...<%= link_to [post] do %> Voir la suite <% end %>
       </li>
   <% end %>
 
