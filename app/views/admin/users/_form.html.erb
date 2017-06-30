@@ -1,0 +1,24 @@
+<%= form_for user, url: [:admin, user] do |f| %>
+
+    <p>
+      Firstname
+      <%= f.text_field :firstname %>
+      <%= user.errors[:firstname] %>
+    </p>
+    <p>
+      Last name
+      <%= f.text_field :name %>
+      <%= user.errors[:name] %>
+    </p>
+    <p>
+      Email
+      <%= f.text_field :email %>
+      <%= user.errors[:email] %>
+    </p>
+    <p>
+      Password
+      <%= f.password_field :password %>
+      <%= user.errors[:password] %>
+    </p>
+    <%= f.submit %>
+<% end %>

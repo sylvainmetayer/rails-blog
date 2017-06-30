@@ -1,0 +1,13 @@
+<ul>
+  <% @users.each do |user| %>
+      <li>
+        <%= link_to [:admin, user] do %>
+            <%= render partial: "identity", locals: {user: user} %>
+        <% end %>
+        |||||||||||||
+        <%= link_to "DELETE", [:admin, user], method: :delete %>
+      </li>
+  <% end %>
+  <br/>
+  <%= link_to "ADD USER", [:new, :admin, :user] %>
+</ul>

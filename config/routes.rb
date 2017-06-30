@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  namespace :admin do
+    resources :users
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
@@ -49,9 +51,9 @@ Rails.application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #   namespace :users do
+  #     # Directs /users/products/* to Admin::ProductsController
+  #     # (app/controllers/users/products_controller.rb)
   #     resources :products
   #   end
 end

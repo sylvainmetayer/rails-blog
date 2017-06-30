@@ -1,0 +1,5 @@
+<div>
+  <%= render partial: "identity", locals: {user: @user} %>
+</div>
+
+<%= link_to "EDIT", [:edit, :admin, @user] %>
