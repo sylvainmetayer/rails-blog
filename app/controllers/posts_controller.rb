@@ -20,6 +20,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+
+    unless @post.can_be_updated_or_deleted_by(current_user)
+      flash[:danger] = 'You do not have the right to delete this post !'
+      redirect_to [@post]
+      return
+    end
+
     @post.destroy
     redirect_to [Post]
   end
@@ -30,6 +37,13 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+
+    unless @post.can_be_updated_or_deleted_by(current_user)
+      flash[:danger] = 'You do not have the right to update this post !'
+      redirect_to [@post]
+      return
+    end
+
     @post.update_attributes params[:post].permit(get_post_params)
     @post.user = current_user
     if @post.save
