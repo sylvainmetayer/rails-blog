@@ -1,15 +1,14 @@
 <ul>
   <% @posts.each do |post| %>
       <li>
-        <%= link_to [post] do %>
-            <%= post.title %> - <%= post.publish_date %>
-            <% if post.user != nil %>
-                (<%= '(' + post.user.email + ')' if post.user != nil %>)
-            <% else %>
-                (Unknown author)
-            <% end %>
-            <%= image_tag(post.image.thumb) unless post.image.nil? %>
-        <% end %>
+          <%= post.title %> - <%= post.publish_date %>
+          <% if post.user != nil %>
+              (<%= post.user.email  %>)
+          <% else %>
+              (Unknown author)
+          <% end %>
+          <%= image_tag(post.image.thumb) unless post.image.nil? %>
+           - <%= post.resume %> <%= link_to [post] do %> ... Voir la suite <% end %>
       </li>
   <% end %>
 
