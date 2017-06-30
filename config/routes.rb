@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'post#index'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,11 +17,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
+  resources :posts
   # Example resource route with options:
   #   resources :products do
   #     member do
   #       get 'short'
-  #       post 'toggle'
+  #       posts 'toggle'
   #     end
   #
   #     collection do
@@ -45,7 +47,7 @@ Rails.application.routes.draw do
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     posts 'toggle'
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable

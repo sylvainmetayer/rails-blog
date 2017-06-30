@@ -1,0 +1,6 @@
+<div>
+  <%= render partial: 'single_post', locals: {post: @post} %>
+</div>
+
+<%= link_to 'Edit this post', [:edit, @post] %>
+<%= link_to 'Delete this post', [@post], method: :delete %>
