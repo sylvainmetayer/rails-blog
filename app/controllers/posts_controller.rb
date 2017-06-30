@@ -58,6 +58,12 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.update_attributes params[:post].permit(get_post_params)
     @post.user = current_user
+
+    if @post.publish_date > Date.today
+      flash[:danger] = 'You can post in the futur !'
+      render 'new'
+      return 
+    end
     if @post.save
       redirect_to [@post]
     else
