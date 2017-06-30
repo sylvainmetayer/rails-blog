@@ -1,9 +1,11 @@
-<ul>
-  <li><%= @user.firstname %> <%= @user.name %></li>
-  <li><%= @user.email %></li>
-  <li>Inscris depuis le : <%= @user.created_at %></li>
-  <li>Derniere maj le : <%= @user.updated_at %></li>
+<h1><%= @user.firstname %> <%= @user.name %></h1>
 
+<%= image_tag(@user.avatar) unless @user.avatar.nil? %>
+
+<ul>
+  <li><%= @user.email %></li>
+  <li>Member since : <%= @user.created_at %></li>
+  <li>Last update : <%= @user.updated_at %></li>
 </ul>
 
 <%= link_to 'Edit this user', [:edit, :admin, @user], :class => 'btn btn-info' %>

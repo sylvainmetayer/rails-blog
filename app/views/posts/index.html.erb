@@ -1,6 +1,6 @@
-<ul>
+<ul class="list-group">
   <% @posts.each do |post| %>
-      <li>
+      <li class="list-group-item">
           <%= post.title %> - <%= post.publish_date %>
           <% if post.user != nil %>
               (<%= post.user.email  %>)

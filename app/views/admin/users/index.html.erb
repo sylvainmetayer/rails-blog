@@ -1,11 +1,14 @@
-<ul>
+<ul class="list-group">
   <% @users.each do |user| %>
-      <li>
+      <li class="list-group-item">
         <%= link_to [:admin, user] do %>
             <%= user.firstname %> <%= user.name %>
+            <%= image_tag(user.avatar.thumb) unless user.avatar.nil? %>
         <% end %>
       </li>
   <% end %>
-  <br/>
-  <%= link_to 'Add a new user', [:new, :admin, :user], :class => 'btn btn-primary' %>
 </ul>
+
+<p>
+  <%= link_to 'Add a new user', [:new, :admin, :user], :class => 'btn btn-primary' %>
+</p>
