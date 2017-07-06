@@ -47,12 +47,13 @@ Post.create!([{
                   user_id: User.offset(1).first.id,
                   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi.'
 
-              },
-              {
-                  title: 'DAWIN & Fitbit',
-                  publish_date: '2017-07-06',
-                  resume: 'Test de Ruffier avec Fitbit !',
-                  user_id: User.first.id,
-                  content: 'Venez effectuer un test de Ruffier. Ce projet a été réalisé durant la semaine innovante de la LP DAWIN. Lien ici : [DAWIN & FitBit](https://dawin.sylvainmetayer.fr)'
-
               }])
+
+post = Post.create!(title: 'DAWIN & Fitbit',
+                    publish_date: '2017-07-06',
+                    resume: 'Test de Ruffier avec Fitbit !',
+                    user_id: User.first.id,
+                    content: 'Venez effectuer un test de Ruffier. Ce projet a été réalisé durant la semaine innovante de la LP DAWIN. Lien ici : [DAWIN & FitBit](https://dawin.sylvainmetayer.fr)')
+post.image = Rails.root.join('db/dawin.jpeg').open
+post.save!
+
