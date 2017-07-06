@@ -9,43 +9,50 @@
 User.destroy_all
 
 User.create!([{
-  firstname: "Sylvain",
-  name: "Metayer",
-  email: "sylvain@metayer.fr",
-  password: "valid_password",
-  password_confirmation: "valid_password"
-  },
-  {
-    firstname: "Tiphaine",
-    name: "Girardot",
-    email: "tiphaine@girardot.fr",
-    password: "valid_password",
-    password_confirmation: "valid_password"
-  }
-    ])
+                  firstname: 'Sylvain',
+                  name: 'Metayer',
+                  email: 'sylvain@metayer.fr',
+                  password: 'password',
+                  password_confirmation: 'password'
+              },
+              {
+                  firstname: 'Tiphaine',
+                  name: 'Girardot',
+                  email: 'tiphaine@girardot.fr',
+                  password: 'password',
+                  password_confirmation: 'password'
+              }
+             ])
 
 Post.destroy_all
 
 Post.create!([{
+                  title: 'Ceci est un premier post',
+                  publish_date: '2017-05-05',
+                  resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                  user_id: User.first.id,
+                  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi.'
+              },
+              {
+                  title: 'Ceci est un second post',
+                  publish_date: '2017-08-05',
+                  resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                  user_id: User.first.id,
+                  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi.'
+              },
+              {
+                  title: 'Ceci est un troisieme post',
+                  publish_date: '2017-09-05',
+                  resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                  user_id: User.offset(1).first.id,
+                  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi.'
 
-    title: "Ceci est un premier post",
-    publish_date: "2017-05-05",
-    resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    user_id: User.first.id,
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi."
-    },
-  {
-    title: "Ceci est un second post",
-    publish_date: "2017-08-05",
-    resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    user_id: User.first.id,
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi."
-  },
-    {
-      title: "Ceci est un troisieme post",
-      publish_date: "2017-09-05",
-      resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      user_id: User.offset(1).first.id,
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum lectus sit amet justo tempus, at fermentum justo tristique. Duis scelerisque blandit euismod. Aenean ante lacus, tristique ut justo a, maximus viverra purus. Nulla sit amet libero pellentesque, vestibulum ipsum convallis, dapibus felis. Ut diam quam, fringilla ut imperdiet accumsan, convallis vitae velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc interdum lectus sit amet elit posuere faucibus. Etiam auctor arcu lorem, in mattis risus elementum in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nunc massa, posuere id neque vitae, iaculis condimentum mi."
+              },
+              {
+                  title: 'DAWIN & Fitbit',
+                  publish_date: '2017-07-06',
+                  resume: 'Test de Ruffier avec Fitbit !',
+                  user_id: User.first.id,
+                  content: 'Venez effectuer un test de Ruffier. Ce projet a été réalisé durant la semaine innovante de la LP DAWIN. Lien ici : [DAWIN & FitBit](https://dawin.sylvainmetayer.fr)'
 
-      }])
+              }])
